@@ -1,12 +1,30 @@
+import { useEffect, useState } from 'react';
 import { StatusBar, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import SplashScreen  from './screens/SplashScreen';
+import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
+
+const Stack = createNativeStackNavigator();
 
 export function App() {
+  const [isLoading, loading] = useState<boolean>(true)
+
+  useEffect(() => {
+    setTimeout(() => loading(false), 3000)
+  }, [])
+
+  if (isLoading) {
+    // We haven't finished checking for the token yet
+    return <SplashScreen />;
+  }  
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar barStyle="default" />
-    </SafeAreaView>
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
   );
 }
 
