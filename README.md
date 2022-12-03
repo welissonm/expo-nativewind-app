@@ -29,3 +29,11 @@ add lines below into ESLint config file `.eslintrc.json`:
       "prettier/@typescript-eslint",
       "plugin:prettier/recommended"
     ]
+
+### Include dependencies
+
+#### React Navigation
+> npm install @react-navigation/native
+>
+> npx expo install react-native-screens react-native-safe-area-context
+>
