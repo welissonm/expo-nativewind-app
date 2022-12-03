@@ -3,6 +3,7 @@
     "name": "ExpoNativeWindApp",
     "slug": "ExpoNativeWindApp",
     "version": "1.0.0",
+    "entryPoint": "main.tsx",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",

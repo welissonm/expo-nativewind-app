@@ -1,13 +1,15 @@
+import { registerRootComponent } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Screens } from './src';
+import { App } from './src/App';
 
-export default function App() {
+export default function Main() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Screens/>
+        <App/>
       </NavigationContainer>
     </SafeAreaProvider>
   );
 }
+registerRootComponent(Main);
